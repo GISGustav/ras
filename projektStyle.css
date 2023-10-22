@@ -1,0 +1,167 @@
+body {
+	font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+	color: #fff;
+    height: 20px;
+    text-align: right;
+	padding: 5px;
+}
+
+.main-content {
+    height: 650px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    height: 20px;
+    background-color: #333;
+	color: #fff;
+	padding: 5px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.legend {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+/* Style the toggle switches for "Skreddatabasen" and "Riskabel jordart" */
+#skreddatabasenToggle,
+#jordartToggle,
+#vattendragLineToggle,
+#vattendragPolygonToggle,
+#grundvattenPolygonToggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 20px;
+    margin: 5px 0;
+	border: solid;
+	border-color: grey;
+}
+
+/* Individual styling for Skreddatabasen toggle */
+#skreddatabasenToggle:checked {
+    background-color: #9f9; /* grön vald */
+}
+
+#skreddatabasenToggle::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    transition: 0.4s;
+	border: solid;
+	border-color: white;
+}
+
+#skreddatabasenToggle:checked::before {
+    left: 20px; /* Move to the right when checked */
+}
+
+/* Individual styling for Jordart toggle */
+#jordartToggle:checked {
+    background-color: #9f9; /* grön vald */
+}
+
+#jordartToggle::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    transition: 0.4s;
+	border: solid;
+	border-color: #f66;
+}
+
+#jordartToggle:checked::before {
+    left: 20px; /* Move to the right when checked */
+}
+/* Individual styling for vattendragLineToggle toggle */
+#vattendragLineToggle:checked {
+    background-color: #9f9; /* grön vald */
+}
+
+#vattendragLineToggle::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    transition: 0.4s;
+	border: solid;
+	border-color: #f66;
+}
+
+#vattendragLineToggle:checked::before {
+    left: 20px; /* Move to the right when checked */
+}
+/* Individual styling for vattendragLineToggle toggle */
+#vattendragPolygonToggle:checked {
+    background-color: #9f9; /* grön vald */
+}
+
+#vattendragPolygonToggle::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    transition: 0.4s;
+	border: solid;
+	border-color: #f66;
+}
+
+#vattendragPolygonToggle:checked::before {
+    left: 20px; /* Move to the right when checked */
+}
+/* Individual styling for vattendragLineToggle toggle */
+#grundvattenPolygonToggle:checked {
+    background-color: #9f9; /* grön vald */
+}
+
+#grundvattenPolygonToggle::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: grey;
+    left: 0;
+    transition: 0.4s;
+	border: solid;
+	border-color: #80eeff;
+}
+
+#grundvattenPolygonToggle:checked::before {
+    left: 20px; /* Move to the right when checked */
+}
