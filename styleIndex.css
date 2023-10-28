@@ -51,7 +51,7 @@ footer {
 	height: 200px;
         }
 .main-image {
-	padding: 150px;
+	padding-top: 150px;
     max-width: 200px;
     max-height: 200px;
     cursor: pointer;
