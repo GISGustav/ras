@@ -10,7 +10,7 @@ body {
 }
 .header-container {
     display: grid;
-    grid-template-columns: 580px 1fr; /* Två kolumner med olika storlek*/
+    grid-template-columns: 650px 1fr; /* Två kolumner med olika storlek*/
     align-items: center; /* Center-align vertikal */
     justify-content: center; /* Center-align horisontell */
 }
