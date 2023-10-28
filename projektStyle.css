@@ -7,22 +7,40 @@ body {
 .header {
     background-color: #333;
 	color: #fff;
-    height: 20px;
-    text-align: right;
-	padding: 5px;
+	padding: 10px;
+}
+.header-container {
+    display: grid;
+    grid-template-columns: 580px 1fr; /* Två kolumner med olika storlek*/
+    align-items: center; /* Center-align vertikal */
+    justify-content: center; /* Center-align horisontell */
+}
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.main-content {
+    height: 600px;
+    text-align: center;
+}
+.main-content-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.main-content {
+.main-content-item {
+    flex: 1;
     height: 650px;
     text-align: center;
 }
 
 .footer {
     text-align: center;
-    height: 20px;
+    height: 200px;
     background-color: #333;
 	color: #fff;
-	padding: 5px;
+	padding: 10px;
 }
 
 #map {
@@ -40,7 +58,7 @@ body {
     font-size: 10px;
 }
 
-/* Style the toggle switches for "Skreddatabasen" and "Riskabel jordart" */
+/* Style för toggle "knappar" alla lagren */
 #skreddatabasenToggle,
 #jordartToggle,
 #vattendragLineToggle,
@@ -59,7 +77,7 @@ body {
 	border-color: grey;
 }
 
-/* Individual styling for Skreddatabasen toggle */
+/* Skreddatabasen toggle */
 #skreddatabasenToggle:checked {
     background-color: #9f9; /* grön vald */
 }
@@ -78,10 +96,10 @@ body {
 }
 
 #skreddatabasenToggle:checked::before {
-    left: 20px; /* Move to the right when checked */
+    left: 20px; /* flyttas till höger 20px vid vald*/
 }
 
-/* Individual styling for Jordart toggle */
+/* Jordart toggle */
 #jordartToggle:checked {
     background-color: #9f9; /* grön vald */
 }
@@ -100,11 +118,11 @@ body {
 }
 
 #jordartToggle:checked::before {
-    left: 20px; /* Move to the right when checked */
+    left: 20px;
 }
-/* Individual styling for vattendragLineToggle toggle */
+/* vattendragLineToggle toggle */
 #vattendragLineToggle:checked {
-    background-color: #9f9; /* grön vald */
+    background-color: #9f9;
 }
 
 #vattendragLineToggle::before {
@@ -121,11 +139,11 @@ body {
 }
 
 #vattendragLineToggle:checked::before {
-    left: 20px; /* Move to the right when checked */
+    left: 20px; 
 }
-/* Individual styling for vattendragLineToggle toggle */
+/* vattendragLineToggle toggle */
 #vattendragPolygonToggle:checked {
-    background-color: #9f9; /* grön vald */
+    background-color: #9f9;
 }
 
 #vattendragPolygonToggle::before {
@@ -142,11 +160,11 @@ body {
 }
 
 #vattendragPolygonToggle:checked::before {
-    left: 20px; /* Move to the right when checked */
+    left: 20px;
 }
-/* Individual styling for vattendragLineToggle toggle */
+/* vattendragLineToggle toggle */
 #grundvattenPolygonToggle:checked {
-    background-color: #9f9; /* grön vald */
+    background-color: #9f9;
 }
 
 #grundvattenPolygonToggle::before {
@@ -163,5 +181,5 @@ body {
 }
 
 #grundvattenPolygonToggle:checked::before {
-    left: 20px; /* Move to the right when checked */
+    left: 20px; 
 }

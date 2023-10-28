@@ -1,16 +1,16 @@
-// Add navigation control
+// navigation control
 map.addControl(new mapboxgl.NavigationControl());
 
-// Get the search input and button
+// sökruta och sökknapp
 var citySearchInput = document.getElementById('plats-search');
 var searchButton = document.getElementById('search-button');
 
-// Handle the search button click event
+// söka med musklick
 searchButton.addEventListener('click', function () {
     performCitySearch();
 });
 
-// Handle the "Enter" key press in the search input field
+// funktion för "enter knapp" istället för att använda mus
 citySearchInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         performCitySearch();
@@ -20,7 +20,7 @@ citySearchInput.addEventListener('keyup', function (event) {
 function performCitySearch() {
     var cityName = citySearchInput.value;
 
-    // Use Mapbox Geocoding API to search for the city
+    // Mapbox API för geocode
     fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${cityName}.json?access_token=pk.eyJ1IjoiZ2lzZ3VzdGF2IiwiYSI6ImNsbWVra2YzdTA5ZnAzY29jYjIyb2llOWEifQ.VPiCrGek7Gud0y2WfZeocw`)
         .then(response => response.json())
         .then(data => {
@@ -44,4 +44,9 @@ function performCitySearch() {
         .catch(error => {
             console.error('Error:', error);
         });
+}
+function performSearch() {
+  const searchTerm = document.getElementById("searchInput").value;
+  localStorage.setItem("searchTerm", searchTerm);
+  window.location.href = "map.html";
 }

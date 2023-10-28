@@ -1,19 +1,18 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lzZ3VzdGF2IiwiYSI6ImNsbWVra2YzdTA5ZnAzY29jYjIyb2llOWEifQ.VPiCrGek7Gud0y2WfZeocw';
 
-// Initialize the map
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/gisgustav/clnx3ovgu006101qxh4pnc94e', // Background style
-  center: [12.1, 58.2], // Initial center coordinates
-  zoom: 7 // Initial zoom level
+  style: 'mapbox://styles/gisgustav/clnx3ovgu006101qxh4pnc94e', // Bakgrund-style för kartan
+  center: [12.1, 58.2], // Startkoordinater
+  zoom: 7 // Startnivå på zoom
 });
 
 map.on('load', function () {
-	var skredatabas = 'mapbox://gisgustav.clnlfv9le2ilv2io2cvik0v9g-6ms2x'; // Replace with the correct vector source URL
-	var jordart = 'mapbox://gisgustav.clnwvid5v122n2cn5y75zd0al-5q5xy'; // Replace with the correct vector source URL
-	var vattendragLine = 'mapbox://gisgustav.duzqnkkf'; // Replace with the correct vector source URL
-	var vattendragPolygon = 'mapbox://gisgustav.0ra76uo0'; // Replace with the correct vector source URL
-	var grundvattenPolygon = 'mapbox://gisgustav.dsnl2eis'; // Replace with the correct vector source URL
+	var skredatabas = 'mapbox://gisgustav.clnlfv9le2ilv2io2cvik0v9g-6ms2x'; 
+	var jordart = 'mapbox://gisgustav.clnwvid5v122n2cn5y75zd0al-5q5xy'; 
+	var vattendragLine = 'mapbox://gisgustav.duzqnkkf'; 
+	var vattendragPolygon = 'mapbox://gisgustav.0ra76uo0'; 
+	var grundvattenPolygon = 'mapbox://gisgustav.dsnl2eis'; 
 	
   map.addSource('skredSource', {
     type: 'vector',
@@ -40,7 +39,7 @@ map.on('load', function () {
     id: 'jordartID',
     type: 'fill',
     source: 'jordartSource',
-    'source-layer': 'riskabel_jordart_wgs', // Replace with the correct source layer name
+    'source-layer': 'riskabel_jordart_wgs', 
     paint: {
 		'fill-color': 'brown',
 		'fill-opacity': 0.4
@@ -56,7 +55,7 @@ map.on('load', function () {
     id: 'vattendragLineID',
     type: 'fill',
     source: 'vattendragLineSource',
-    'source-layer': 'vattendrag_line-bl5ugo', // Replace with the correct source layer name
+    'source-layer': 'vattendrag_line-bl5ugo', 
     paint: {
 		'fill-color': 'red',
 		'fill-opacity': 0.4
@@ -72,7 +71,7 @@ map.on('load', function () {
     id: 'vattendragPolygonID',
     type: 'fill',
     source: 'vattendragPolygonSource',
-    'source-layer': 'vattendrag_polygon-3sa4kh', // Replace with the correct source layer name
+    'source-layer': 'vattendrag_polygon-3sa4kh', 
     paint: {
 		'fill-color': 'red',
 		'fill-opacity': 0.4
@@ -88,10 +87,10 @@ map.on('load', function () {
     id: 'skredID',
     type: 'circle',
     source: 'skredSource',
-    'source-layer': 'Skreddatabas', // Replace with the correct source layer name
+    'source-layer': 'Skreddatabas',
 	  paint: {
     'circle-radius': 5,
-    'circle-color': 'blue' // Set the color to red
+    'circle-color': 'blue' 
 	},
 	'layout': {
     'visibility': 'none' // Start-visibility 'none'
@@ -121,17 +120,17 @@ map.on('load', function () {
     id: 'grundvattenPolygonID',
     type: 'fill-extrusion',
     source: 'grundvattenPolygonSource',
-    'source-layer': 'grundvattenPolygon-7h1u85', // Replace with the correct source layer name
+    'source-layer': 'grundvattenPolygon-7h1u85', 
     paint: {
 		'fill-extrusion-color': '#80eeff',
 		'fill-extrusion-opacity': 0.4,
 		'fill-extrusion-height': [
             'case',
-            ['==', ['get', 'Z'], 0], // If Z is 0, keep it 0
-            0, // Otherwise, add 10 times the value of Z
+            ['==', ['get', 'Z'], 0], // Om Z = 0, behåll 0
+            0, // Annars, lägg på 10 gånger värdet för Z
             ['*', 10, ['get', 'Z']]
         ],
-		'fill-extrusion-base': 0 // Extrude from the ground
+		'fill-extrusion-base': 0 // Basen över mark
 	},
 	    'layout': {
         'visibility': 'none' // Start-visibility 'none'

@@ -1,4 +1,4 @@
-// Create the legend element with a toggle
+// Legend med checkbox
 const legend = document.createElement('div');
 legend.className = 'legend';
 legend.innerHTML = `
@@ -40,7 +40,7 @@ legend.innerHTML = `
    </div>
 `;
 
-// Get the toggle element by its ID
+// toggleelement med ID
 const skreddatabasenToggle = legend.querySelector('#skreddatabasenToggle');
 const jordartToggle = legend.querySelector('#jordartToggle');
 const vattendragLineToggle = legend.querySelector('#vattendragLineToggle');
@@ -54,59 +54,51 @@ vattendragLineToggle.checked = false;
 vattendragPolygonToggle.checked = false;
 grundvattenPolygonToggle.checked = false;
 
-// Listen for the 'change' event on the toggle
+// Kolla om lagret är valt eller ej
 skreddatabasenToggle.addEventListener('change', function () {
     if (skreddatabasenToggle.checked) {
-        // If the Skreddatabasen toggle is checked, show the "point-layer" (Skreddatabasen layer)
+        // Om lagret är valt, visa lagret (Skreddatabasen)
         map.setLayoutProperty('skredID', 'visibility', 'visible');
     } else {
-        // If the Skreddatabasen toggle is unchecked, hide the "point-layer" (Skreddatabasen layer)
+        // Om lagret inte är valt, visa inte lagret (Skreddatabasen)
         map.setLayoutProperty('skredID', 'visibility', 'none');
     }
 });
 jordartToggle.addEventListener('change', function () {
     if (jordartToggle.checked) {
-        // If the Jordart toggle is checked, show the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret är valt, visa lagret (Riskabel jordart)
         map.setLayoutProperty('jordartID', 'visibility', 'visible');
     } else {
-        // If the Jordart toggle is unchecked, hide the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret inte är valt, visa inte lagret(Riskabel jordart)
         map.setLayoutProperty('jordartID', 'visibility', 'none');
     }
 });
 vattendragLineToggle.addEventListener('change', function () {
     if (vattendragLineToggle.checked) {
-        // If the Jordart toggle is checked, show the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret är valt, visa lagret (Raiskabelt vattendrag)
         map.setLayoutProperty('vattendragLineID', 'visibility', 'visible');
     } else {
-        // If the Jordart toggle is unchecked, hide the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret inte är valt, visa inte lagret (Raiskabelt vattendrag)
         map.setLayoutProperty('vattendragLineID', 'visibility', 'none');
     }
 });
 vattendragPolygonToggle.addEventListener('change', function () {
     if (vattendragPolygonToggle.checked) {
-        // If the Jordart toggle is checked, show the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret är valt, visa lagret (Raiskabelt större vattendrag)
         map.setLayoutProperty('vattendragPolygonID', 'visibility', 'visible');
     } else {
-        // If the Jordart toggle is unchecked, hide the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret inte är valt, visa inte lagret (Raiskabelt större vattendrag)
         map.setLayoutProperty('vattendragPolygonID', 'visibility', 'none');
     }
 });
 grundvattenPolygonToggle.addEventListener('change', function () {
     if (grundvattenPolygonToggle.checked) {
-        // If the Jordart toggle is checked, show the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret är valt, visa lagret (Grundvattennivå)
         map.setLayoutProperty('grundvattenPolygonID', 'visibility', 'visible');
     } else {
-        // If the Jordart toggle is unchecked, hide the "jord-layer" (Riskabel jordart layer)
-        // Replace 'jord-layer' with the actual name of your "Riskabel jordart" layer
+        // Om lagret inte är valt, visa inte lagret (Grundvattennivå)
         map.setLayoutProperty('grundvattenPolygonID', 'visibility', 'none');
     }
 });
-// Append the legend to the map container
+// Lägg till legend till kartan
 document.getElementById('map').appendChild(legend);
